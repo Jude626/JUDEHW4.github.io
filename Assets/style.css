@@ -1,0 +1,140 @@
+/*Styling for the entire quiz, theme is black & aqua.*/
+:root{
+    background-color: rgb(41, 40, 40);
+    }
+    
+    h{
+        color: aqua;
+        text-shadow: .5px .5px black;
+        text-align: center;
+        font-size: xx-large;
+        font-family: Verdana;
+    }
+
+    li{
+        padding-bottom: 3px;
+        color: aqua;
+        text-shadow: 1.5px 1px 3px black;
+        list-style-type: none;
+    }
+    
+    p{
+        color: aqua;
+        text-shadow: .5px .5px black;
+        text-align: center;
+        font-size: xx-large;
+        font-family: Verdana;
+    }
+
+    input{
+        text-align: center;
+    }
+    
+    .container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 80rem;
+        margin: 0 auto;
+      }
+    
+      button {
+        display: inline-block;
+        font-family: Verdana;
+        background-color: black;
+        border-radius: 10px;
+        border: 3px double aqua;
+        color:aqua;
+        text-align: center;
+        font-size: 15px;
+        padding: 20px;
+        width: 200px;
+        margin-top: 3px;
+      }
+    
+      button:hover{
+          box-shadow: 5px 5px 5px 5px aqua;
+      }
+    
+    #startpage{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #timer{
+        font-family: Verdana;
+        background-color: aqua;
+        color: black;
+        font-size: x-large;
+        text-shadow: .5px .5px black;
+        text-align: center;
+    }
+   
+    #gameover {
+        text-align: center;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #highScore{
+        height: 1.5rem;
+        border: groove 2px;
+    }
+    
+    #high-scorePage{
+        display: none;
+        width: 50%;
+        border: solid;
+        border-color: aqua;
+        border-bottom-style: groove;
+        padding-bottom: .3rem;
+        background: black;
+    }
+    
+    #highscore-header{
+        display:flex;
+        justify-content: space-around;
+        border-bottom-style: outset;
+        margin-bottom: .5rem;
+        background-color: aqua;
+        color: black;
+        font-family: Verdana;
+    }
+    #highscoreContainer{
+        height: 100%;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #initials{
+        margin: 1rem;
+        height: 2rem;
+    }
+    
+    #highscore-initials{
+        display: inline-block;
+        padding-left: 10rem;
+        font-family: Verdana;
+        font-weight: bold;
+    }
+    
+    #highscore-score{
+        float: right;
+        padding-right: 10rem;
+        font-family: Verdana;
+        font-weight: bold;
+    }
+    
+    #finalScore{
+        padding-bottom: 1rem;
+        font-size: x-large;
+        font-family: Verdana;
+        font-weight: bold;
+    }
