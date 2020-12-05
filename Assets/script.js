@@ -60,8 +60,26 @@ var quizQuestions = [{
     ];
 
 // Create needed variables for the timer, score, & questions correct
+var finalQuestionIndex = quizQuestions.length;
+var currentQuestionIndex = 0;
+var timeLeft = 60;
+var timerInterval;
+var score = 0;
+var correct;
 
 // Create the function needed to go through the object array for the quiz questions and answers
+function generateQuizQuestion(){
+    gameoverDiv.style.display = "none";
+    if (currentQuestionIndex === finalQuestionIndex){
+        return showScore();
+    } 
+    var currentQuestion = quizQuestions[currentQuestionIndex];
+    questionsEl.innerHTML = "<p>" + currentQuestion.question + "</p>";
+    buttonA.innerHTML = currentQuestion.A;
+    buttonB.innerHTML = currentQuestion.B;
+    buttonC.innerHTML = currentQuestion.C;
+    buttonD.innerHTML = currentQuestion.D;
+};
 
 // Create the start quiz function that removes the start button
 
@@ -72,7 +90,7 @@ var quizQuestions = [{
 // Create the submit button
 
 // Create a local storage with JSON to save the high score submissions
- 
+
 // Create a display for the high scores to be stored in to show at the end of the quiz
 
 // Create a function to clear the high score list, and then create a new high score list from the local storage
@@ -84,3 +102,5 @@ var quizQuestions = [{
 // Create a function to restart the quiz & timer
 
 // Create a function to check the user response to each question
+
+// Create if and else if statements for correct and incorrect answers
