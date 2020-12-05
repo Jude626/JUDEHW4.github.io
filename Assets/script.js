@@ -101,7 +101,13 @@ function startQuiz(){
 }
 
 // Create a function to show the number of correct answers after the last question
-
+function showScore(){
+    quizBody.style.display = "none"
+    gameoverDiv.style.display = "flex";
+    clearInterval(timerInterval);
+    highscoreInputName.value = "";
+    finalScoreEl.innerHTML = "You got " + score + " out of " + quizQuestions.length + " correct!";
+}
 // Create the submit button
 submitScoreBtn.addEventListener("click", function highscore(){
     if(highscoreInputName.value === "") {
@@ -109,7 +115,14 @@ submitScoreBtn.addEventListener("click", function highscore(){
         return false;
 
 // Create a local storage with JSON to save the high score submissions
- 
+    }else{
+        var savedHighscores = JSON.parse(localStorage.getItem("savedHighscores")) || [];
+        var currentUser = highscoreInputName.value.trim();
+        var currentHighscore = {
+            name : currentUser,
+            score : score
+        };
+        
 // Create a display for the high scores to be stored in to show at the end of the quiz
 
 // Create a function to clear the high score list, and then create a new high score list from the local storage
