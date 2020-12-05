@@ -82,15 +82,34 @@ function generateQuizQuestion(){
 };
 
 // Create the start quiz function that removes the start button
+function startQuiz(){
+    gameoverDiv.style.display = "none";
+    startQuizDiv.style.display = "none";
+    generateQuizQuestion();
 
 // Create the timer
+    timerInterval = setInterval(function() {
+        timeLeft--;
+        quizTimer.textContent = "Time left: " + timeLeft;
+    
+        if(timeLeft === 0) {
+          clearInterval(timerInterval);
+          showScore();
+        }
+      }, 1000);
+    quizBody.style.display = "block";
+}
 
 // Create a function to show the number of correct answers after the last question
 
 // Create the submit button
+submitScoreBtn.addEventListener("click", function highscore(){
+    if(highscoreInputName.value === "") {
+        alert("Must type initials");
+        return false;
 
 // Create a local storage with JSON to save the high score submissions
-
+ 
 // Create a display for the high scores to be stored in to show at the end of the quiz
 
 // Create a function to clear the high score list, and then create a new high score list from the local storage
