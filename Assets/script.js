@@ -150,11 +150,44 @@ function generateHighscores(){
     }
 
 // Create a function to show the high score list without the other pages showing
+function showHighscore(){
+    startQuizDiv.style.display = "none"
+    gameoverDiv.style.display = "none";
+    highscoreContainer.style.display = "flex";
+    highscoreDiv.style.display = "block";
+    endGameBtns.style.display = "flex";
+    generateHighscores();
+    }
 
 // Create a function to clear the high score storage 
+function clearScore(){
+    window.localStorage.clear();
+    highscoreDisplayName.textContent = "";
+    highscoreDisplayScore.textContent = "";
+    }
 
 // Create a function to restart the quiz & timer
+function replayQuiz(){
+    highscoreContainer.style.display = "none";
+    gameoverDiv.style.display = "none";
+    startQuizDiv.style.display = "flex";
+    timeLeft = 60;
+    score = 0;
+    currentQuestionIndex = 0;
+    }
 
 // Create a function to check the user response to each question
-
+function checkAnswer(answer){
+    correct = quizQuestions[currentQuestionIndex].correctAnswer;
 // Create if and else if statements for correct and incorrect answers
+    if (answer === correct && currentQuestionIndex !== finalQuestionIndex){
+        score++;
+        currentQuestionIndex++;
+        generateQuizQuestion();
+    }else if (answer !== correct && currentQuestionIndex !== finalQuestionIndex){
+        currentQuestionIndex++;
+        generateQuizQuestion();
+    }else{
+        showScore();
+        }
+    }
