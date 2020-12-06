@@ -191,3 +191,6 @@ function checkAnswer(answer){
         showScore();
         }
     }
+
+// Create an event listener to start the quiz
+startQuizButton.addEventListener("click",startQuiz);
